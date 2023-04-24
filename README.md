@@ -1,4 +1,4 @@
-# Landing Zones
+# Landing Zoness
 
 This repository contains different types of Landing Zones to deploy to the Oracle Cloud Infrastructure platform. The landing zones are assembled from modules and templates that users can use in their default configuration or fork this repo and customize for your own scenarios.
 
