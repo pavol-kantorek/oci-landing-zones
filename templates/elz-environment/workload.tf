@@ -8,6 +8,7 @@ locals {
   }
 }
 
+/*
 module "workload" {
   source = "../elz-workload"
 
@@ -48,3 +49,4 @@ module "workload" {
     oci.home_region = oci.home_region
   }
 }
+*/
