@@ -14,7 +14,7 @@ module "compartment" {
     oci.home_region = oci.home_region
   }
 }
-
+/*  PK: Exclude identity 26.4.23
 module "identity" {
   source             = "../elz-identity"
   tenancy_ocid       = var.tenancy_ocid
@@ -48,7 +48,7 @@ module "identity" {
     oci.home_region = oci.home_region
   }
 }
-
+*/
 locals {
   budget = {
     budget_description  = "Budget targeting ${var.environment_prefix} enviroment compartment"
