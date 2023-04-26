@@ -23,9 +23,11 @@ output "drg_id" {
   value = module.network.drg_id
 }
 
+/* 
 output "identity_domain" {
   value = module.identity.domain
 }
+*/
 
 output "workload_compartment_id" {
   value = module.workload.compartment_id

@@ -3,7 +3,7 @@
 # -----------------------------------------------------------------------------
 locals {
   prod_environment = {
-    environment_prefix     = "P"
+    environment_prefix     = "PROD"
     enable_tf_state_backup = false
     enable_logging         = true
   }
@@ -139,7 +139,7 @@ module "prod_environment" {
 # -----------------------------------------------------------------------------
 locals {
   nonprod_environment = {
-    environment_prefix     = "N"
+    environment_prefix     = "NPROD"
     enable_tf_state_backup = false
     enable_logging         = true
   }
