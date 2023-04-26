@@ -24,7 +24,7 @@ output "prod_environment" {
     hub_public_subnet_cidr = module.prod_environment.hub_public_subnet_cidr
     hub_private_subnet_cidr = module.prod_environment.hub_private_subnet_cidr
     drg_id = module.prod_environment.drg_id
-    identity_domain = module.prod_environment.identity_domain
+    // identity_domain = module.prod_environment.identity_domain
   }
 }
 
@@ -37,6 +37,6 @@ output "nonprod_environment" {
     hub_public_subnet_cidr = module.nonprod_environment.hub_public_subnet_cidr
     hub_private_subnet_cidr = module.nonprod_environment.hub_private_subnet_cidr
     drg_id = module.nonprod_environment.drg_id
-    identity_domain = module.nonprod_environment.identity_domain
+    // identity_domain = module.nonprod_environment.identity_domain
   }
 }
