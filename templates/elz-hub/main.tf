@@ -234,7 +234,7 @@ resource "oci_core_security_list" "security_list_hub" {
 
 resource "oci_core_subnet" "hub_private_subnet" {
   cidr_block                 = var.private_subnet_cidr_block
-  display_name               = "ELZ-SUB-${var.environment_prefix}-HUB-PRI-${local.region_key[0]}"
+  display_name               = "ELZ-SUB-${var.environment_prefix}-HUB-PRV-${local.region_key[0]}"
   dns_label                  = "prisublabel"
   compartment_id             = var.network_compartment_id
   prohibit_public_ip_on_vnic = true
