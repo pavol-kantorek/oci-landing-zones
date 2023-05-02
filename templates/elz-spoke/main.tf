@@ -129,10 +129,11 @@ module "workload_spoke_vcn" {
   vcn_display_name    = var.vcn_display_name
   vcn_dns_label       = var.vcn_dns_label
   enable_ipv6         = false
-
+/*
   providers = {
     oci = oci.home_region
   }
+  */
 }
 ######################################################################
 #          Create Workload VCN Spoke Security List                   #
