@@ -67,7 +67,7 @@ locals {
   }
 
   hub_public_route_rules = {
-    route_table_display_name = "ELZ-RTPUB-${var.environment_prefix}-HUB001"
+    route_table_display_name = "ELZ-RTPUB-${var.environment_prefix}-HUB-PUB"
     route_rules              = merge(local.hub_public_route_rules_options.route_rules_default, local.hub_public_route_rules_options.route_rules_igw, local.hub_public_route_rules_options.route_rules_vpn, local.hub_public_route_rules_options.route_rules_fastconnect, local.hub_public_route_rules_options.route_rules_workload)
   }
 
@@ -127,7 +127,7 @@ locals {
   }
 
   hub_private_route_rules = {
-    route_table_display_name = "ELZ-RTPRV-${var.environment_prefix}-HUB002"
+    route_table_display_name = "ELZ-RTPRV-${var.environment_prefix}-HUB-PRI"
     route_rules              = merge(local.hub_private_route_rules_options.route_rules_default,local.hub_private_route_rules_options.route_rules_nat,local.hub_private_route_rules_options.route_rules_srvc_gw, local.hub_private_route_rules_options.route_rules_vpn, local.hub_private_route_rules_options.route_rules_fastconnect, local.hub_private_route_rules_options.route_rules_workload)
   }
 
@@ -234,7 +234,7 @@ resource "oci_core_security_list" "security_list_hub" {
 
 resource "oci_core_subnet" "hub_private_subnet" {
   cidr_block                 = var.private_subnet_cidr_block
-  display_name               = "ELZ-SUB-${var.environment_prefix}-HUB-${local.region_key[0]}002"
+  display_name               = "ELZ-SUB-${var.environment_prefix}-HUB-PRI-${local.region_key[0]}"
   dns_label                  = "prisublabel"
   compartment_id             = var.network_compartment_id
   prohibit_public_ip_on_vnic = true
@@ -261,7 +261,7 @@ resource "oci_core_route_table" "hub_private_route_table" {
 #Public Subnet and route table
 resource "oci_core_subnet" "hub_public_subnet" {
   cidr_block                 = var.public_subnet_cidr_block
-  display_name               = "ELZ-SUB-${var.environment_prefix}-HUB-${local.region_key[0]}001"
+  display_name               = "ELZ-SUB-${var.environment_prefix}-HUB-PUB-${local.region_key[0]}"
   dns_label                  = "pubsublabel"
   compartment_id             = var.network_compartment_id
   prohibit_public_ip_on_vnic = false
