@@ -117,3 +117,23 @@ variable "enable_vpn_or_fastconnect" {}
 variable "enable_vpn_on_environment" {}
 variable "ipsec_connection_static_routes" {}
 variable "customer_onprem_ip_cidr" {}
+
+# -----------------------------------------------------------------------------
+# Network Extension Variables
+# -----------------------------------------------------------------------------
+variable "enable_vpn_or_fastconnect" {
+  type        = string
+  description = "Option to enable VPN or FASTCONNECT service. Options are NONE, VPN, FASTCONNECT."
+}
+
+variable "enable_vpn_on_environment" {
+  type = bool
+}
+
+variable "ipsec_connection_static_routes" {
+  type = list(string)
+}
+
+variable "customer_onprem_ip_cidr" {
+  type = list(string)
+}
